@@ -56,8 +56,8 @@ The platform is shaped by authentic K–12 classroom needs and teaching experien
 > Setup instructions will be added as the first release becomes available.
 
 ```bash
-git clone https://github.com/lauralearning2026/Laura_learn-.git
-cd Laura_learn-
+git clone https://github.com/lauralearning2026/Lauralearners.git
+cd Lauralearners
 ```
 ## Contributing
 
