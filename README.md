@@ -1,4 +1,4 @@
-# Laura_learn-
+# Lauralearners
 An adaptive learning platform designed for K-12 education that dynamically tailors instructional content, pacing, and assessment to individual student needs.
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 ## Why This Project Exists
