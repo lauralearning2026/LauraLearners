@@ -1,5 +1,6 @@
 "use client";
-import {useEffect,useMemo,useState} from "react";\nimport {track} from "../../../lib/analytics";
+import {useEffect,useMemo,useState} from "react";
+import {track} from "../../../lib/analytics";
 
 type Q={id:number,skill:string,prompt:string,choices:string[],answer:number,why:string};
 const questions:Q[]=[
