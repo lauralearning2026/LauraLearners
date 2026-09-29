@@ -1,0 +1,3 @@
+import {NextResponse} from "next/server";
+const allowed=new Set(["diagnostic_started","diagnostic_completed","lesson_opened","practice_checked","reassessment_started"]);
+export async function POST(request:Request){try{const body=await request.json();if(!body||typeof body.event!=="string"||!allowed.has(body.event))return NextResponse.json({accepted:false},{status:400});const event={event:body.event,skill:typeof body.skill==="string"?body.skill.slice(0,40):undefined,occurredAt:new Date().toISOString()};console.info("LAURA_EVENT",JSON.stringify(event));return NextResponse.json({accepted:true});}catch{return NextResponse.json({accepted:false},{status:400});}}
