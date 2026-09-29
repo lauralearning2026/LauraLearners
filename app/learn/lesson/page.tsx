@@ -1,5 +1,6 @@
 "use client";
-import {useEffect,useRef,useState} from "react";\nimport {track} from "../../../lib/analytics";
+import {useEffect,useRef,useState} from "react";
+import {track} from "../../../lib/analytics";
 const data={
 "linear-equations":{title:"Linear Equations",idea:"Keep an equation balanced by applying the same operation to both sides.",example:"3x + 5 = 20 → 3x = 15 → x = 5",steps:["Undo addition or subtraction first.","Undo multiplication or division next.","Substitute your answer back to check it."],q:"Solve 4x + 3 = 19.",c:["x = 3","x = 4","x = 5","x = 16"],a:1,why:"Subtract 3 to get 4x = 16, then divide by 4."},
 "functions":{title:"Functions",idea:"A function assigns each input a single output. Evaluate it by substituting the input.",example:"f(x) = 2x² - 3; f(2) = 2(2²) - 3 = 5",steps:["Identify the requested input.","Replace every x with that value.","Use order of operations to simplify."],q:"If f(x) = 3x + 2, what is f(4)?",c:["9","12","14","18"],a:2,why:"3(4) + 2 = 14."},
