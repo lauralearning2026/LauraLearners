@@ -4,7 +4,8 @@ export async function POST(request:Request){
  try{
   const body=await request.json();
   if(!body||typeof body.event!=="string"||!allowed.has(body.event)) return NextResponse.json({accepted:false},{status:400});
-  const url=process.env.SUPABASE_URL;
+  const rawUrl=process.env.SUPABASE_URL;
+  const url=rawUrl?.replace(/\\/rest\\/v1\\/?$/, "").replace(/\\/$/, "");
   const key=process.env.SUPABASE_SECRET_KEY;
   if(!url||!key){console.error("Analytics storage is not configured");return NextResponse.json({accepted:false},{status:503});}
   const row={event_type:body.event,skill:typeof body.skill==="string"?body.skill.slice(0,40):null};
