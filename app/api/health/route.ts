@@ -1,7 +1,8 @@
 import {NextResponse} from "next/server";
 export async function GET(){
  const rawUrl=process.env.SUPABASE_URL;
-  const url=rawUrl?.replace(/\\/rest\\/v1\\/?$/, "").replace(/\\/$/, "");
+ const trimmedUrl=rawUrl?.endsWith("/")?rawUrl.slice(0,-1):rawUrl;
+ const url=trimmedUrl?.endsWith("/rest/v1")?trimmedUrl.slice(0,-8):trimmedUrl;
  const key=process.env.SUPABASE_SECRET_KEY;
  if(!url||!key) return NextResponse.json({configured:false,databaseReachable:false},{status:503});
  try{
