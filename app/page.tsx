@@ -44,7 +44,7 @@ export default function Home() {
         <div>
           <div className="eyebrow">ABOUT THE CREATOR</div>
           <h2>Built from the classroom.</h2>
-          <p>LauraLearning grows out of two decades of teaching mathematics and graduate study in instructional design and learning technology.</p>
+          <p>LauraLearning grows out of daily work teaching Algebra II in a Memphis public high school, together with graduate study in instructional design and learning technology.</p>
           <a href="/about">About Brigid →</a>
         </div>
         <div>
