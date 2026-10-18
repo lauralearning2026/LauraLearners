@@ -1,1 +1,5 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Resource Library" };
+
 export default function Lessons(){return <main className="page"><div className="eyebrow">TEACHER RESOURCE LIBRARY · FIRST UNIT</div><h1>Prepare with<br/><em>understanding.</em></h1><p className="lead">Algebra I readiness and linear equations. These illustrative resources are drafts for educator review; verified Tennessee standards references will be added before a pilot.</p><div className="projects"><article><span>01</span><div><small>LESSON SUPPORT</small><h2>Preserving equality</h2><p>Lesson outline, worked example, illustrative misconceptions, and questions that reveal reasoning.</p><a href="/learn/lesson">Open lesson package →</a></div></article><article><span>02</span><div><small>10–15 MINUTE LEARNING MODULE</small><h2>Explain the balance</h2><p>Rehearse a mathematical explanation and plan a response to a common error.</p><a href="/learn/module">Open learning module →</a></div></article></div></main>}
