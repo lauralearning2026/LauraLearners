@@ -1,1 +1,36 @@
-export default function Philosophy(){return <main className="page compactPage"><div className="eyebrow">PHILOSOPHY OF LEARNING DESIGN AND TECHNOLOGY</div><h1>Design for <em>understanding.</em></h1><p className="lead">Learning design should make important ideas accessible without hiding the thinking learners need to do.</p><h2>My developing philosophy</h2><p>I believe effective learning experiences connect new ideas to prior knowledge, present clear models, provide purposeful practice, and use feedback to guide next steps. Technology should support these decisions rather than determine them.</p><p>In my Algebra II classroom, learners may need support with foundational equations and functions before tackling more advanced concepts. This makes careful sequencing and attention to cognitive load essential.</p><p>This is a short working summary. The full course-developed philosophy artifact can be added after it has been reviewed and refined.</p></main>}
+import type { Metadata } from "next";
+
+export const metadata: Metadata = { title: "Design Philosophy" };
+
+const principles = [
+  ["Start from prior knowledge", "New ideas need somewhere to attach. Design begins by finding out what learners already understand and where the gaps are."],
+  ["Model the thinking, not just the steps", "Clear worked examples make the reasoning visible, so learners see why a step works and not only what to do."],
+  ["Release responsibility gradually", "Learning moves from modeling, to guided practice, to independent work, with support reduced as understanding grows."],
+  ["Use feedback to choose the next step", "Assessment is most useful when it tells the learner and the teacher what to do next."],
+  ["Let technology serve the design", "Tools should support these decisions rather than determine them."],
+];
+
+export default function Philosophy() {
+  return (
+    <main className="page compactPage">
+      <div className="eyebrow">PHILOSOPHY OF LEARNING DESIGN AND TECHNOLOGY</div>
+      <h1>Design for <em>understanding.</em></h1>
+      <p className="lead">Learning design should make important ideas accessible without hiding the thinking learners need to do.</p>
+
+      <h2>Five principles</h2>
+      <ol className="principles">
+        {principles.map(([title, text]) => (
+          <li key={title}><strong>{title}</strong><p>{text}</p></li>
+        ))}
+      </ol>
+
+      <h2>In practice</h2>
+      <p>In my Algebra II classroom, many learners need support with foundational equations and functions before tackling more advanced concepts. That makes careful sequencing and attention to cognitive load essential, and it shapes how LauraLearning supports teachers: understand the mathematics first, anticipate misconceptions, then prepare the lesson.</p>
+
+      <div className="actions">
+        <a className="button" href="/learn">See it in LauraLearning →</a>
+        <a className="button secondary" href="/portfolio">View my portfolio</a>
+      </div>
+    </main>
+  );
+}
