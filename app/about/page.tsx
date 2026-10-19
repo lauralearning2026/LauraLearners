@@ -13,6 +13,16 @@ export default function About() {
       <p>Many of my students reach Algebra II with gaps in foundational skills that began years earlier. Teaching them has shown me how much depends on the teacher's own explanation of why each step works, and how hard that is when a teacher is assigned mathematics outside their original preparation.</p>
       <p>That is the problem LauraLearning sets out to address: short, practical support that helps teachers understand the mathematics, anticipate student misconceptions, and prepare their next lesson.</p>
 
+      <h2>What I bring</h2>
+      <ul className="aboutList">
+        <li><strong>Expertise:</strong> secondary mathematics instruction, scaffolding for unfinished learning, and standards-aligned assessment design, including AI-assisted development of assessment items.</li>
+        <li><strong>Tools:</strong> GitHub, Next.js, and Vercel, which I used to design and build this site; AWS cloud services from my graduate coursework; and generative AI tools for drafting assessment items that I then review.</li>
+        <li><strong>Strengths:</strong> turning the reasoning behind a mathematical step into a clear explanation, and checking materials carefully for accuracy before they reach learners.</li>
+      </ul>
+
+      <h2>What drives me</h2>
+      <p>Every student deserves a teacher who can explain not just what to do, but why it works. My most recent milestone is designing and launching LauraLearning, an open resource that brings that kind of explanation to teachers who need it most.</p>
+
       <h2>Background</h2>
       <ul className="aboutList">
         <li><strong>Teaching:</strong> Algebra II at a public high school in Memphis, Tennessee, now in my third year.</li>
