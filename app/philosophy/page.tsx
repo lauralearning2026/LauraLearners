@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { existsSync } from "fs";
+import { join } from "path";
 
 export const metadata: Metadata = { title: "Design Philosophy" };
 
@@ -11,6 +13,7 @@ const principles = [
 ];
 
 export default function Philosophy() {
+  const hasToolkit = existsSync(join(process.cwd(), "public", "learning-design-toolkit.pdf"));
   return (
     <main className="page compactPage">
       <div className="eyebrow">PHILOSOPHY OF LEARNING DESIGN AND TECHNOLOGY</div>
@@ -26,6 +29,15 @@ export default function Philosophy() {
 
       <h2>In practice</h2>
       <p>In my Algebra II classroom, many learners need support with foundational equations and functions before tackling more advanced concepts. That makes careful sequencing and attention to cognitive load essential, and it shapes how LauraLearning supports teachers: understand the mathematics first, anticipate misconceptions, then prepare the lesson.</p>
+
+      {hasToolkit && (
+        <section className="toolkit">
+          <h2>Learning Design Toolkit</h2>
+          <p>My Learning Design Toolkit, developed in Fundamentals of Learning Design and Technology, gathers the models, principles, and tools that guide my design decisions.</p>
+          <iframe src="/learning-design-toolkit.pdf#view=FitH" title="Learning Design Toolkit (PDF)" className="pdfFrame" />
+          <a className="projectLink" href="/learning-design-toolkit.pdf" target="_blank" rel="noopener">Open the toolkit as a PDF →</a>
+        </section>
+      )}
 
       <div className="actions">
         <a className="button" href="/learn">See it in LauraLearning →</a>

@@ -9,9 +9,10 @@ export const metadata: Metadata = {
 
 const links = [
   ["/learn", "Teacher Support"],
-  ["/portfolio", "Portfolio"],
-  ["/about", "About"],
+  ["/about", "About Me"],
   ["/philosophy", "Design Philosophy"],
+  ["/portfolio", "Portfolio"],
+  ["/resume", "Resume"],
 ];
 
 function NavLinks() {
@@ -20,7 +21,7 @@ function NavLinks() {
       {links.map(([href, label]) => (
         <a key={href} href={href}>{label}</a>
       ))}
-      <a className="navContact" href="mailto:Bkosgey6@gmail.com">Contact</a>
+      <a className="navContact" href="/contact">Contact Me</a>
     </>
   );
 }

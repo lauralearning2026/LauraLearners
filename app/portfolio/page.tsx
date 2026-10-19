@@ -13,7 +13,7 @@ const categories: { name: string; description: string; artifacts: number[] }[] =
   { name: "Learning Design Activities", description: "Learning activities, assessments, and professional development.", artifacts: [1] },
   { name: "Instructional Media", description: "Infographics, storyboards, podcasts, and multimedia.", artifacts: [] },
   { name: "Quality Assurance and Evaluation", description: "Quality assurance tools and evaluation plans.", artifacts: [2] },
-  { name: "Sample Online Course", description: "A documented online course and its learning activities.", artifacts: [] },
+  { name: "Online Courses", description: "Documented online courses and their learning activities.", artifacts: [] },
 ];
 
 export default function Portfolio() {
@@ -40,6 +40,9 @@ export default function Portfolio() {
       <section className="portfolioCategories">
         <div className="eyebrow">ACE EPORTFOLIO CATEGORIES</div>
         <h2>Browse by area of practice</h2>
+        <nav className="categoryJump" aria-label="Portfolio sections">
+          {categories.map((c, i) => <a key={c.name} href={"#category-" + i}>{c.name}</a>)}
+        </nav>
         {filled.map(category => (
           <article id={"category-" + category.i} key={category.name}>
             <div><span className="eyebrow">0{category.i + 1} / 05</span><h3>{category.name}</h3><p>{category.description}</p></div>
