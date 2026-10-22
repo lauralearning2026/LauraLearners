@@ -33,7 +33,7 @@ export default function Philosophy() {
       {hasToolkit && (
         <section className="toolkit">
           <h2>Learning Design Toolkit</h2>
-          <p>My Learning Design Toolkit, developed in Fundamentals of Learning Design and Technology, gathers the models, principles, and tools that guide my design decisions.</p>
+          <p>My Learning Design Toolkit, developed in Fundamentals of Learning Design and Technology, gathers the learning theories, design and project management models, cognitive load principles, learning strategies, and learner analysis tools that guide my design decisions, each with an example from my Algebra II classroom.</p>
           <iframe src="/learning-design-toolkit.pdf#view=FitH" title="Learning Design Toolkit (PDF)" className="pdfFrame" />
           <a className="projectLink" href="/learning-design-toolkit.pdf" target="_blank" rel="noopener">Open the toolkit as a PDF →</a>
         </section>
