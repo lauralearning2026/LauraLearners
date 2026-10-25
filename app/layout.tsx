@@ -62,8 +62,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </header>
         {children}
         <footer>
-          <strong>LauraLearning</strong>
-          <p>Open mathematics teacher support, designed from classroom experience by Brigid Kosgey.</p>
+          <strong>Brigid Kosgey | LauraLearning</strong>
+          <p>Instructional design ePortfolio and open mathematics teacher support.</p>
           <small>© 2026 Brigid Kosgey · Source code licensed under Apache 2.0</small>
         </footer>
       </body>

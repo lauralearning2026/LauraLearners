@@ -1,22 +1,21 @@
-const steps = [
-  ["01", "Reflect", "Check your own reasoning with a short, private knowledge check on the mathematics behind each step.", "/learn/diagnostic", "Try the knowledge check"],
-  ["02", "Understand", "Study a worked example with the reasoning spelled out, plus the misconceptions students most often bring.", "/learn/lesson", "See a worked example"],
-  ["03", "Prepare", "Use a ready lesson outline and a 10–15 minute module to rehearse your explanation before class.", "/learn/lessons", "Browse resources"],
-];
+import type { Metadata } from "next";
+import { categories } from "../lib/portfolio";
+
+export const metadata: Metadata = { title: { absolute: "Brigid Kosgey | Instructional Design ePortfolio" } };
 
 export default function Home() {
   return (
     <main>
       <section className="hero portfolioHero">
         <div className="heroCopy">
-          <div className="eyebrow">OPEN TEACHER SUPPORT · SECONDARY MATHEMATICS</div>
-          <h1>Support for every teacher <em>of mathematics.</em></h1>
-          <p className="lead">Many math classes are taught by teachers working outside their original preparation. LauraLearning gives them free, classroom-grounded support (a quick knowledge check, worked explanations, and lesson resources), starting with Algebra I readiness.</p>
+          <div className="eyebrow">INSTRUCTIONAL DESIGN · LEARNING TECHNOLOGY · MATHEMATICS EDUCATION</div>
+          <h1>Brigid <em>Kosgey</em></h1>
+          <p className="portfolioRole">Algebra II Teacher | Learning Designer</p>
+          <p className="lead">Welcome to my professional ePortfolio. I design clear, practical learning experiences that connect what happens in the classroom with thoughtful assessment and educational technology.</p>
           <div className="actions">
-            <a className="button" href="/learn/diagnostic">Try the knowledge check →</a>
-            <a className="button secondary" href="/learn">Explore teacher support</a>
+            <a className="button" href="/portfolio">View my work →</a>
+            <a className="button secondary" href="/resume">View my resume</a>
           </div>
-          <p className="heroByline">Created by Brigid Kosgey, a mathematics teacher in Memphis, Tennessee.</p>
         </div>
         <div className="heroArt" aria-hidden="true">
           <div className="heroOrange"></div><div className="heroGreen"></div>
@@ -28,37 +27,64 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="portfolioOverview">
-        <div className="eyebrow">HOW IT WORKS</div>
-        <h2>Reflect. Understand. Prepare.</h2>
-        <p>Each unit follows the same short path from checking your own understanding to walking into class ready to explain it.</p>
-        <div className="homeSteps">
-          {steps.map(([n, title, text, href, cta]) => (
-            <a href={href} key={n}><span>{n}</span><strong>{title}</strong><p>{text}</p><small>{cta} →</small></a>
-          ))}
-        </div>
-        <p className="statusNote"><strong>Early preview.</strong> One unit, linear equations, is available now. More units are in development. <a href="/learn/how-it-works">How the preview works</a></p>
-      </section>
-
       <section className="portfolioOverview portfolioIntro">
         <div>
-          <div className="eyebrow">ABOUT THE CREATOR</div>
-          <h2>Built from the classroom.</h2>
-          <p>LauraLearning grows out of daily work teaching Algebra II in a Memphis public high school, together with graduate study in instructional design and learning technology.</p>
-          <a href="/about">About Brigid →</a>
+          <div className="eyebrow">ABOUT ME</div>
+          <h2>Teaching shapes my design.</h2>
+          <p>I teach Algebra II at a public high school in Memphis, Tennessee, and I am completing an M.Ed. in Instructional Design and Educational Technology. My classroom is where I test what works: scaffolding, clear explanations, and feedback that points to the next step.</p>
+          <a href="/about">Read more about me →</a>
         </div>
         <div>
-          <div className="eyebrow">INSTRUCTIONAL DESIGN PORTFOLIO</div>
-          <h2>Design work and coursework.</h2>
-          <p>Projects, evaluation plans, and artifacts from my M.Ed. in Instructional Design and Educational Technology, alongside my design philosophy.</p>
-          <a href="/portfolio">View the portfolio →</a>
+          <div className="eyebrow">DESIGN PHILOSOPHY</div>
+          <h2>Design for understanding.</h2>
+          <p>Effective learning starts from prior knowledge, models the thinking behind each step, and releases responsibility gradually. My Learning Design Toolkit gathers the theories and models behind these choices.</p>
+          <a href="/philosophy">Read my philosophy and toolkit →</a>
         </div>
+      </section>
+
+      <section className="portfolioOverview">
+        <div className="eyebrow">PORTFOLIO</div>
+        <h2>My work, by area of practice</h2>
+        <p>Each area has its own page, where new artifacts will appear as I complete my M.Ed. coursework.</p>
+        <div className="categoryBoxes">
+          {categories.map((c, i) => (
+            <a className="categoryBox" href={`/portfolio/${c.slug}`} key={c.slug}>
+              <span className="categoryIcon" aria-hidden="true">{c.icon}</span>
+              <span className="eyebrow">0{i + 1} / 05</span>
+              <h3>{c.name}</h3>
+              <p>{c.description}</p>
+              <span className={c.artifacts.length ? "wipBadge started" : "wipBadge"}>
+                {c.artifacts.length ? "Work in progress · more to come" : "Future work · coming with coursework"}
+              </span>
+              <small>Open {c.name} →</small>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section className="portfolioOverview homeResume">
+        <div>
+          <div className="eyebrow">RESUME</div>
+          <h2>Experience and education</h2>
+          <p>Algebra II teacher in Memphis, Tennessee · M.Ed. in Instructional Design and Educational Technology (in progress) · graduate coursework in Applied Artificial Intelligence · B.Ed. in Mathematics Education.</p>
+        </div>
+        <a className="button secondary" href="/resume">View my resume →</a>
       </section>
 
       <section className="statement portfolioContact">
-        <p>CONNECT</p>
-        <h2>Interested in trying it with your teachers, or contributing?</h2>
-        <a className="button" href="mailto:Bkosgey6@gmail.com">Get in touch →</a>
+        <p>CONTACT ME</p>
+        <h2>Let's talk about learning design.</h2>
+        <a className="button" href="/contact">Get in touch →</a>
+      </section>
+
+      <section className="portfolioOverview homeFeatured">
+        <div className="eyebrow">FEATURED PROJECT · TEACHER SUPPORT</div>
+        <h2>LauraLearning</h2>
+        <p>An open-source project I designed and built: free, classroom-grounded support for teachers of mathematics, including those teaching outside their original preparation. It starts with a short knowledge check, worked explanations, and lesson resources for linear equations.</p>
+        <div className="actions">
+          <a className="button" href="/learn">Explore Teacher Support →</a>
+          <a className="button secondary" href="/learn/diagnostic">Try the knowledge check</a>
+        </div>
       </section>
     </main>
   );
