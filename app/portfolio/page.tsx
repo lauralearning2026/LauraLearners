@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { categories, projects } from "../../lib/portfolio";
+import { categories, projects, roadmap } from "../../lib/portfolio";
 
 export const metadata: Metadata = { title: "Instructional Design Portfolio" };
 
@@ -28,6 +28,24 @@ export default function Portfolio() {
             </a>
           ))}
         </div>
+      </section>
+
+      <section className="roadmap">
+        <div className="eyebrow">PROGRAM ROADMAP</div>
+        <h2>Building my ePortfolio, step by step</h2>
+        <p>Each course in my M.Ed. in Instructional Design and Educational Technology adds artifacts to this portfolio, leading to a comprehensive ePortfolio at the capstone.</p>
+        <ol className="roadmapList">
+          {roadmap.map(r => (
+            <li key={r.step} className={r.done ? "done" : ""}>
+              <span className="roadmapStep" aria-hidden="true">{r.done ? "✓" : r.step}</span>
+              <div>
+                <small>{r.course}{r.done ? " · Complete" : " · Upcoming"}</small>
+                <strong>{r.href ? <a href={r.href}>{r.artifacts}</a> : r.artifacts}</strong>
+                <p>{r.purpose}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
       </section>
 
       <section className="portfolioExisting">

@@ -54,15 +54,17 @@ export default async function CategoryPage({ params }: Params) {
       )}
 
       <h2>Coming soon</h2>
+      <p className="comingIntro">These program assignments will be added here, refined with faculty feedback.</p>
       <div className="placeholderGrid">
-        {c.planned.map((p, i) => (
-          <div className="placeholderCard" key={p}>
+        {c.planned.map(p => (
+          <div className="placeholderCard" key={p.course + p.module + p.title}>
             <div className="placeholderArt" aria-hidden="true">
               <span>{c.icon}</span>
             </div>
-            <small>ARTIFACT {String(i + 1).padStart(2, "0")}</small>
-            <strong>{p}</strong>
-            <p>Reserved for an upcoming assignment.</p>
+            <small>{p.course} · {p.module.toUpperCase()}</small>
+            <strong>{p.title}</strong>
+            <p>{p.purpose}</p>
+            <span className="soonTag">Coming soon</span>
           </div>
         ))}
       </div>

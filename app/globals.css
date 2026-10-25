@@ -183,3 +183,22 @@ h1 em,.portfolioHero h1 em{font-family:var(--serif);font-style:italic;font-weigh
   .heroBooks{width:96px;margin-bottom:6px}.heroBooks span{padding:7px 6px;font-size:9px}
   .heroLeaf{transform:scale(.55) rotate(-30deg)}
 }
+
+/* Program roadmap and assignment placeholders */
+.comingIntro{color:#4d5752;margin-top:-6px}
+.soonTag{align-self:flex-start;margin-top:6px;padding:3px 9px;border:1px dashed #d9a272;border-radius:999px;background:#fff3e8;color:#9a4a10;font-size:11px;font-weight:700}
+.roadmap{margin-top:70px}
+.roadmap>h2{font:600 clamp(29px,3.5vw,46px)/1.15 var(--serif);color:var(--green)}
+.roadmap>p{font-size:16px;line-height:1.7;color:#4d5752;max-width:780px}
+.roadmapList{list-style:none;padding:0;margin:26px 0 0;position:relative;max-width:900px}
+.roadmapList:before{content:"";position:absolute;left:21px;top:10px;bottom:10px;border-left:2px dashed #e2cdb7}
+.roadmapList li{position:relative;display:grid;grid-template-columns:44px 1fr;gap:16px;padding:12px 0}
+.roadmapStep{z-index:1;width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;background:#fffdfa;border:2px solid #e2cdb7;color:var(--green)}
+.roadmapList li.done .roadmapStep{background:var(--green);border-color:var(--green);color:#fff}
+.roadmapList small{font-size:12px;font-weight:800;letter-spacing:1.5px;color:var(--orange)}
+.roadmapList li.done small{color:var(--green)}
+.roadmapList strong{display:block;font-family:var(--serif);font-size:20px;font-weight:600;color:var(--ink);margin:2px 0}
+.roadmapList strong a{color:inherit;text-decoration:none;border-bottom:1px solid #e2cdb7}
+.roadmapList strong a:hover{color:var(--orange)}
+.roadmapList p{margin:0;font-size:15px;color:#5b6660}
+.compactPage .statusNote{margin:30px 0 0}
