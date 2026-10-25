@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { categories } from "../lib/portfolio";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.lauralearning.org"),
@@ -7,21 +8,34 @@ export const metadata: Metadata = {
   description: "Open, classroom-grounded support for teachers of mathematics, including those teaching outside their original preparation. Created by Brigid Kosgey.",
 };
 
-const links = [
-  ["/learn", "Teacher Support"],
+const aceLinks = [
   ["/about", "About Me"],
   ["/philosophy", "Design Philosophy"],
-  ["/portfolio", "Portfolio"],
+];
+const aceAfter = [
   ["/resume", "Resume"],
+  ["/contact", "Contact Me"],
 ];
 
-function NavLinks() {
+function NavLinks({ mobile = false }: { mobile?: boolean }) {
   return (
     <>
-      {links.map(([href, label]) => (
-        <a key={href} href={href}>{label}</a>
-      ))}
-      <a className="navContact" href="/contact">Contact Me</a>
+      {aceLinks.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+      {mobile ? (
+        <>
+          <a href="/portfolio">Portfolio</a>
+          {categories.map(c => <a key={c.slug} className="navSub" href={`/portfolio/${c.slug}`}>{c.name}</a>)}
+        </>
+      ) : (
+        <div className="navDrop">
+          <a href="/portfolio" aria-haspopup="true">Portfolio ▾</a>
+          <div className="navDropMenu">
+            {categories.map(c => <a key={c.slug} href={`/portfolio/${c.slug}`}>{c.name}</a>)}
+          </div>
+        </div>
+      )}
+      {aceAfter.map(([href, label]) => <a key={href} href={href}>{label}</a>)}
+      <a className="navTeacher" href="/learn">Teacher Support</a>
     </>
   );
 }
@@ -43,7 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <nav className="navDesktop" aria-label="Main navigation"><NavLinks /></nav>
           <details className="navMobile">
             <summary aria-label="Open menu"><span /><span /><span /></summary>
-            <nav aria-label="Main navigation"><a href="/">Home</a><NavLinks /></nav>
+            <nav aria-label="Main navigation"><a href="/">Home</a><NavLinks mobile /></nav>
           </details>
         </header>
         {children}
