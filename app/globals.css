@@ -169,3 +169,17 @@ h1 em,.portfolioHero h1 em{font-family:var(--serif);font-style:italic;font-weigh
 .homeFeatured>h2{font:600 clamp(29px,3.5vw,46px)/1.15 var(--serif);color:var(--green)}
 .homeFeatured>p{max-width:780px;font-size:16px;line-height:1.7;color:#4d5752}
 @media(max-width:760px){.homeResume{flex-direction:column;align-items:flex-start}}
+
+/* Smaller hero illustration */
+.portfolioHero{grid-template-columns:minmax(0,1.45fr) minmax(280px,.55fr);min-height:420px}
+.heroArt{min-height:420px}
+.heroDesk{width:78%;height:56%;right:6%;bottom:10%}
+.leafOne{width:96px;height:165px}.leafTwo{width:80px;height:140px}.leafThree{width:66px;height:120px}
+@media(max-width:950px){
+  .portfolioHero{grid-template-columns:1fr;min-height:0}
+  .heroArt{min-height:170px;height:170px}
+  .heroDesk{width:auto;height:150px;right:50%;transform:translateX(50%);bottom:10px}
+  .heroLaptop{width:190px;height:130px;border-width:6px;border-bottom-width:11px}
+  .heroBooks{width:96px;margin-bottom:6px}.heroBooks span{padding:7px 6px;font-size:9px}
+  .heroLeaf{transform:scale(.55) rotate(-30deg)}
+}
