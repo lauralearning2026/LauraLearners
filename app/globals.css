@@ -160,3 +160,12 @@ h1 em,.portfolioHero h1 em{font-family:var(--serif);font-style:italic;font-weigh
 @media(max-width:760px){.placeholderGrid{grid-template-columns:1fr}}
 .categoryPager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:50px;padding-top:20px;border-top:1px solid var(--line)}
 .categoryPager a{color:var(--green);font-weight:700;text-decoration:none}
+
+/* ePortfolio-first homepage */
+.homeResume{display:flex;align-items:center;justify-content:space-between;gap:30px;border-top:1px solid var(--line)}
+.homeResume>div{max-width:760px}
+.homeResume .button{white-space:nowrap}
+.homeFeatured{border-top:1px solid var(--line);margin-top:10px}
+.homeFeatured>h2{font:600 clamp(29px,3.5vw,46px)/1.15 var(--serif);color:var(--green)}
+.homeFeatured>p{max-width:780px;font-size:16px;line-height:1.7;color:#4d5752}
+@media(max-width:760px){.homeResume{flex-direction:column;align-items:flex-start}}
