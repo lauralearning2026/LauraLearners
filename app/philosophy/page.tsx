@@ -27,6 +27,8 @@ export default function Philosophy() {
         ))}
       </ol>
 
+      <p className="statusNote"><strong>Coming in TECH5273, Module 4:</strong> my full Philosophy of Learning Design and Technology will be added to this page.</p>
+
       <h2>In practice</h2>
       <p>In my Algebra II classroom, many learners need support with foundational equations and functions before tackling more advanced concepts. That makes careful sequencing and attention to cognitive load essential, and it shapes how LauraLearning supports teachers: understand the mathematics first, anticipate misconceptions, then prepare the lesson.</p>
 
