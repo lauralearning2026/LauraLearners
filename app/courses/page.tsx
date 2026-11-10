@@ -11,7 +11,7 @@ export default function Courses() {
       <section className="lessoncard">
         <small>TENNESSEE TCAP · END OF COURSE</small>
         <strong>Algebra II EOC Practice</strong>
-        <p>28 practice questions across all four TCAP reporting categories, each tagged with its standard, depth of knowledge, and calculator policy.</p>
+        <p>1,000 practice questions across all four TCAP reporting categories and every assessed standard, each tagged with its standard, depth of knowledge, and calculator policy.</p>
         <div className="actions"><a className="button" href="/courses/algebra-2">Start practicing →</a></div>
       </section>
     </main>

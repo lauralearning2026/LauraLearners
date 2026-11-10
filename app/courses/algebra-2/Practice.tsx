@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
-import bank from "../../../lib/courses/algebra-2.json";
 import styles from "./practice.module.css";
 
 type Item = {
@@ -16,9 +15,11 @@ type Item = {
   explanation: string;
   rationales: string[];
 };
-type Result = { id: string; category: string; right: boolean };
+type Bank = { items: Item[] };
+type Result = { id: string; category: string; standard: string; right: boolean };
 
-const items = bank.items as Item[];
+const BANK_URL = "/courses/algebra-2/bank.json";
+const SET_SIZE = 10;
 const LETTERS = "ABCDEF";
 const CATS: [string, string][] = [
   ["ALL", "All categories"],
@@ -28,6 +29,8 @@ const CATS: [string, string][] = [
   ["SP", "Statistics & Probability"],
 ];
 const catName = (k: string) => CATS.find(c => c[0] === k)?.[1] ?? k;
+// Group sub-standards such as A2.F.IF.B.5.a under A2.F.IF.B.5.
+const baseStd = (s: string) => s.split(".").slice(0, 5).join(".");
 
 const KATEX = "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/";
 type RenderFn = (el: HTMLElement, opts: object) => void;
@@ -60,8 +63,21 @@ function useKatex(): boolean {
   return ready;
 }
 
+function sample<T>(list: T[], n: number): T[] {
+  const a = list.slice();
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a.slice(0, n);
+}
+
 export default function Practice() {
+  const [items, setItems] = useState<Item[] | null>(null);
+  const [error, setError] = useState(false);
   const [filter, setFilter] = useState("ALL");
+  const [std, setStd] = useState("ALL");
+  const [queue, setQueue] = useState<Item[]>([]);
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<number[]>([]);
   const [checked, setChecked] = useState(false);
@@ -69,9 +85,27 @@ export default function Practice() {
   const ready = useKatex();
   const box = useRef<HTMLDivElement>(null);
 
-  const queue = useMemo(() => items.filter(q => filter === "ALL" || q.category === filter), [filter]);
+  useEffect(() => {
+    fetch(BANK_URL)
+      .then(r => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((b: Bank) => setItems(b.items))
+      .catch(() => setError(true));
+  }, []);
+
+  const pool = useMemo(
+    () => (items ?? []).filter(q => (filter === "ALL" || q.category === filter) && (std === "ALL" || baseStd(q.standard) === std)),
+    [items, filter, std],
+  );
+  const standards = useMemo(() => {
+    const set = new Set<string>();
+    (items ?? []).forEach(q => { if (filter === "ALL" || q.category === filter) set.add(baseStd(q.standard)); });
+    return Array.from(set).sort();
+  }, [items, filter]);
+
+  useEffect(() => { if (items) newSet(); }, [items, filter, std]); // eslint-disable-line react-hooks/exhaustive-deps
+
   const q: Item | undefined = queue[idx];
-  const done = idx >= queue.length;
+  const done = queue.length > 0 && idx >= queue.length;
 
   useEffect(() => {
     const w = window as unknown as { renderMathInElement?: RenderFn };
@@ -81,10 +115,10 @@ export default function Practice() {
         throwOnError: false,
       });
     }
-  }, [ready, idx, checked, filter, done]);
+  }, [ready, idx, checked, queue, done]);
 
-  function restart(next = filter) {
-    setFilter(next);
+  function newSet() {
+    setQueue(sample(pool, SET_SIZE));
     setIdx(0);
     setSelected([]);
     setChecked(false);
@@ -100,7 +134,7 @@ export default function Practice() {
   function check() {
     if (!q) return;
     const right = q.answer.length === selected.length && q.answer.every(a => selected.includes(a));
-    setResults(r => [...r, { id: q.id, category: q.category, right }]);
+    setResults(r => [...r, { id: q.id, category: q.category, standard: baseStd(q.standard), right }]);
     setChecked(true);
   }
 
@@ -112,16 +146,33 @@ export default function Practice() {
 
   const lastRight = results.length > 0 ? results[results.length - 1].right : false;
 
+  if (error) {
+    return <p className={styles.progress}>The question bank could not be loaded. Please refresh the page.</p>;
+  }
+  if (!items) {
+    return <p className={styles.progress}>Loading questions…</p>;
+  }
+
+  const missed = Array.from(new Set(results.filter(r => !r.right).map(r => r.standard)));
+
   return (
     <div ref={box}>
       <div className={styles.filters} role="group" aria-label="Reporting category">
         {CATS.map(([k, label]) => (
-          <button key={k} aria-pressed={filter === k} onClick={() => restart(k)}>{label}</button>
+          <button key={k} aria-pressed={filter === k} onClick={() => { setFilter(k); setStd("ALL"); }}>{label}</button>
         ))}
       </div>
+      <label className={styles.stdPick}>
+        Standard{" "}
+        <select value={std} onChange={(e: { target: { value: string } }) => setStd(e.target.value)}>
+          <option value="ALL">All standards in this category</option>
+          {standards.map(s => <option key={s} value={s}>{s}</option>)}
+        </select>{" "}
+        <span className={styles.count}>{pool.length} questions</span>
+      </label>
 
-      <div className={styles.progress}>{done ? "Results" : `Question ${idx + 1} of ${queue.length}`}</div>
-      <div className={styles.bar}><span style={{ width: `${(Math.min(idx, queue.length) / queue.length) * 100}%` }} /></div>
+      <div className={styles.progress}>{done ? "Results" : `Question ${Math.min(idx + 1, queue.length)} of ${queue.length}`}</div>
+      <div className={styles.bar}><span style={{ width: `${queue.length ? (Math.min(idx, queue.length) / queue.length) * 100 : 0}%` }} /></div>
 
       {!done && q ? (
         <section className={styles.card} key={q.id}>
@@ -139,15 +190,9 @@ export default function Practice() {
               const isSel = selected.includes(i);
               const state = checked ? (isAns ? styles.correct : isSel ? styles.wrong : "") : "";
               return (
-                <button
-                  key={i}
-                  className={`${styles.choice} ${state}`}
-                  aria-pressed={isSel}
-                  disabled={checked}
-                  onClick={() => pick(i)}
-                >
+                <button key={i} className={`${styles.choice} ${state}`} aria-pressed={isSel} disabled={checked} onClick={() => pick(i)}>
                   <b>{LETTERS[i]}.</b>
-                  <span>
+                  <span className={styles.choiceBody}>
                     <span dangerouslySetInnerHTML={{ __html: c }} />
                     {checked && (isAns || isSel) && (
                       <span className={styles.why} dangerouslySetInnerHTML={{ __html: q.rationales[i] }} />
@@ -169,6 +214,7 @@ export default function Practice() {
             ) : (
               <button className="submit" disabled={selected.length === 0} onClick={check}>Check answer</button>
             )}
+            <span className={styles.qid}>{q.id}</span>
           </div>
         </section>
       ) : (
@@ -193,7 +239,8 @@ export default function Practice() {
               })}
             </tbody>
           </table>
-          <button className="submit" onClick={() => restart()}>Try again</button>
+          {missed.length > 0 && <p>Standards to review: {missed.join(", ")}</p>}
+          <button className="submit" onClick={newSet}>New set of {SET_SIZE} →</button>
         </section>
       )}
     </div>

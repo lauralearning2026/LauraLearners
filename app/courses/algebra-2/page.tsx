@@ -12,8 +12,9 @@ export default function Algebra2Practice() {
       <div className="eyebrow">ONLINE COURSES · ALGEBRA II</div>
       <h1>Algebra II<br /><em>EOC practice.</em></h1>
       <p className="lead">
-        Practice aligned to the 2023–24 Tennessee Algebra II standards and the TCAP blueprint. Choose a reporting
-        category, answer each question, and get instant feedback on every choice.
+        1,000 practice questions aligned to the 2023–24 Tennessee Algebra II standards and weighted like the TCAP
+        blueprint. Choose a category or a single standard, work through a set of 10, and get instant feedback on every
+        choice.
       </p>
       <Practice />
       <section className="lessoncard">
