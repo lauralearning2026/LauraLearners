@@ -1,0 +1,724 @@
+{
+ "course": "Algebra II",
+ "exam": "TCAP Algebra II EOC (Tennessee)",
+ "version": "sample-2",
+ "note": "Original practice items modeled on the TCAP blueprint and released-item style. Not official TCAP items. Teacher review required before student use.",
+ "categories": {
+  "SO": "Structure and Operations (25-30%)",
+  "EI": "Equations and Inequalities (17-23%)",
+  "FN": "Functions (27-33%)",
+  "SP": "Statistics and Probability (20-28%)"
+ },
+ "items": [
+  {
+   "id": "LL-A2-023",
+   "category": "SO",
+   "standard": "A2.A.APR.A.1",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "Which binomial is a factor of \\(p(x) = x^{3} - 2x^{2} - 5x + 6\\)?",
+   "choices": [
+    "\\(x + 1\\)",
+    "\\(x - 1\\)",
+    "\\(x - 2\\)",
+    "\\(x + 3\\)"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "By the Factor Theorem, \\((x - a)\\) is a factor exactly when \\(p(a) = 0\\). \\(p(1) = 1 - 2 - 5 + 6 = 0\\), so \\(x - 1\\) is a factor.",
+   "rationales": [
+    "\\(p(-1) = 8 \\neq 0\\).",
+    "Correct.",
+    "\\(p(2) = -4 \\neq 0\\).",
+    "\\(p(-3) = -24 \\neq 0\\). Check the sign: \\(x + 3\\) means test \\(x = -3\\)."
+   ]
+  },
+  {
+   "id": "LL-A2-005",
+   "category": "SO",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "What are the zeros of \\(f(x) = x^{3} - 4x^{2} - 9x + 36\\)?",
+   "choices": [
+    "\\(x = -4,\\ x = -3,\\ x = 3\\)",
+    "\\(x = -3,\\ x = 3,\\ x = 4\\)",
+    "\\(x = 4\\) and \\(x = 9\\)",
+    "\\(x = -9\\) and \\(x = 4\\)"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Factor by grouping: \\(x^2(x - 4) - 9(x - 4) = (x - 4)(x^2 - 9) = (x - 4)(x - 3)(x + 3)\\). The zeros are \\(-3, 3,\\) and \\(4\\).",
+   "rationales": [
+    "Sign error on the factor \\(x - 4\\): its zero is \\(+4\\).",
+    "Correct.",
+    "Stopped at \\(x^2 - 9\\) and treated 9 as a zero instead of solving \\(x^2 = 9\\).",
+    "Stopped at \\(x^2 - 9\\) and took \\(-9\\) as a zero."
+   ],
+   "standard": "A2.A.APR.A.2"
+  },
+  {
+   "id": "LL-A2-022",
+   "category": "SO",
+   "standard": "A2.A.SSE.A.1.a",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "A school store sells water bottles. Its weekly profit, in dollars, is modeled by \\(P(x) = (200 - 5x)(12 + 0.5x)\\), where \\(x\\) is the number of $0.50 price increases. What does the factor \\(200 - 5x\\) represent?",
+   "choices": [
+    "the price of one water bottle after \\(x\\) increases",
+    "the number of water bottles sold each week",
+    "the total weekly profit",
+    "the amount the price goes up each time"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Profit = (number sold)(price each). The factor \\(12 + 0.5x\\) is the price, so \\(200 - 5x\\) is the number sold, which drops by 5 for each price increase.",
+   "rationales": [
+    "That is the other factor, \\(12 + 0.5x\\).",
+    "Correct.",
+    "Profit is the whole product, not one factor.",
+    "The price goes up by $0.50 each time; that is the 0.5 in the other factor."
+   ]
+  },
+  {
+   "id": "LL-A2-024",
+   "category": "SO",
+   "standard": "A2.N.M.A.1",
+   "type": "MC",
+   "dok": 1,
+   "calculator": "Y",
+   "stem": "The matrix shows the number of T-shirts sold at two stores.<table class='data'><tr><th></th><th>Small</th><th>Medium</th><th>Large</th></tr><tr><th>Store A</th><td>14</td><td>22</td><td>9</td></tr><tr><th>Store B</th><td>11</td><td>18</td><td>16</td></tr></table>What are the dimensions of the matrix, and what does the entry in row 2, column 3 represent?",
+   "choices": [
+    "3 × 2; the number of large shirts sold at Store B",
+    "2 × 3; the number of large shirts sold at Store B",
+    "2 × 3; the number of medium shirts sold at Store B",
+    "3 × 2; the number of medium shirts sold at Store A"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Dimensions are rows × columns: 2 stores by 3 sizes, so 2 × 3. Row 2 is Store B and column 3 is Large, so the entry (16) is the number of large shirts sold at Store B.",
+   "rationales": [
+    "Rows and columns are reversed: dimensions are rows × columns.",
+    "Correct.",
+    "Column 3 is Large, not Medium.",
+    "Rows and columns are reversed, and row 2 is Store B."
+   ]
+  },
+  {
+   "id": "LL-A2-025",
+   "category": "SO",
+   "standard": "A2.N.M.A.2.c",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "Matrix \\(Q\\) shows food orders, and matrix \\(C\\) shows the cost of each item in dollars.<p>\\(Q = \\begin{bmatrix} 3 & 2 \\\\ 1 & 4 \\end{bmatrix}\\) &nbsp; (rows: Monday, Tuesday; columns: pizzas, salads)</p><p>\\(C = \\begin{bmatrix} 12 \\\\ 6 \\end{bmatrix}\\) &nbsp; (rows: pizza, salad)</p>Which matrix shows the total cost of the orders each day?",
+   "choices": [
+    "\\(\\begin{bmatrix} 48 \\\\ 36 \\end{bmatrix}\\)",
+    "\\(\\begin{bmatrix} 42 \\\\ 48 \\end{bmatrix}\\)",
+    "\\(\\begin{bmatrix} 36 & 12 \\\\ 12 & 24 \\end{bmatrix}\\)",
+    "\\(\\begin{bmatrix} 60 \\\\ 60 \\end{bmatrix}\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "Multiply each row of \\(Q\\) by the column of \\(C\\). Monday: \\(3(12) + 2(6) = 48\\). Tuesday: \\(1(12) + 4(6) = 36\\).",
+   "rationales": [
+    "Correct.",
+    "Multiplied columns of \\(Q\\) by \\(C\\) instead of rows.",
+    "Multiplied entry by entry; this is not matrix multiplication.",
+    "Added items across days instead of multiplying rows by columns."
+   ]
+  },
+  {
+   "id": "LL-A2-026",
+   "category": "SO",
+   "standard": "A2.N.M.A.3",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "Which augmented matrix represents this system?<p>\\(2x + 3y = 12\\)<br>\\(x - y = 1\\)</p>",
+   "choices": [
+    "\\(\\left[\\begin{array}{cc|c} 2 & 3 & 12 \\\\ 1 & -1 & 1 \\end{array}\\right]\\)",
+    "\\(\\left[\\begin{array}{cc|c} 2 & 3 & 12 \\\\ 1 & 1 & 1 \\end{array}\\right]\\)",
+    "\\(\\left[\\begin{array}{cc|c} 2 & 1 & 12 \\\\ 3 & -1 & 1 \\end{array}\\right]\\)",
+    "\\(\\left[\\begin{array}{cc|c} 12 & 3 & 2 \\\\ 1 & -1 & 1 \\end{array}\\right]\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "Each row is one equation: the \\(x\\)-coefficient, the \\(y\\)-coefficient, then the constant.",
+   "rationales": [
+    "Correct.",
+    "Lost the negative sign on \\(y\\) in the second equation.",
+    "Wrote the coefficients by column instead of by row.",
+    "Put the constant in the \\(x\\) column."
+   ]
+  },
+  {
+   "id": "LL-A2-001",
+   "category": "SO",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "Which expression shows \\(\\left(\\sqrt[5]{2x}\\right)^{3}\\) rewritten with rational exponents?",
+   "choices": [
+    "\\((2x)^{\\frac{5}{3}}\\)",
+    "\\((2x)^{\\frac{3}{5}}\\)",
+    "\\(8x^{\\frac{1}{5}}\\)",
+    "\\(2x^{\\frac{3}{5}}\\)"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "The index of the root becomes the denominator and the power becomes the numerator: \\(\\left(\\sqrt[5]{2x}\\right)^3 = (2x)^{3/5}\\).",
+   "rationales": [
+    "Root and power are switched: the root index goes in the denominator.",
+    "Correct.",
+    "Cubed the 2 but left \\(x\\) under a fifth root with no power of 3.",
+    "The exponent must apply to the whole base \\(2x\\), not just \\(x\\)."
+   ],
+   "standard": "A2.N.RN.A.1.c"
+  },
+  {
+   "id": "LL-A2-002",
+   "category": "SO",
+   "type": "MS",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "Which expressions are equivalent to \\(16^{\\frac{3}{4}}\\)? Select the <b>three</b> correct answers.",
+   "choices": [
+    "\\(12\\)",
+    "\\(\\left(16^{\\frac{1}{4}}\\right)^{3}\\)",
+    "\\(8\\)",
+    "\\(\\left(\\sqrt[3]{16}\\right)^{4}\\)",
+    "\\(\\left(\\sqrt[4]{16}\\right)^{3}\\)",
+    "\\(4^{3}\\)"
+   ],
+   "answer": [
+    1,
+    2,
+    4
+   ],
+   "explanation": "\\(16^{3/4} = \\left(\\sqrt[4]{16}\\right)^3 = 2^3 = 8\\). Writing it as \\(\\left(16^{1/4}\\right)^3\\) is the same thing.",
+   "rationales": [
+    "Multiplied \\(16 \\cdot \\frac{3}{4}\\) instead of using the exponent.",
+    "Correct.",
+    "Correct.",
+    "Root and power are switched: that is \\(16^{4/3}\\).",
+    "Correct.",
+    "\\(4^3 = 64\\); used \\(\\sqrt{16}\\) instead of \\(\\sqrt[4]{16}\\)."
+   ],
+   "standard": "A2.N.RN.A.1.c"
+  },
+  {
+   "id": "LL-A2-010",
+   "category": "EI",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "A town has 2,400 residents, and its population grows 5% each year. Which inequality can be used to find the number of years, \\(t\\), until the population is greater than 4,000?",
+   "choices": [
+    "\\(2400(1.05)^{t} > 4000\\)",
+    "\\(2400(0.05)^{t} > 4000\\)",
+    "\\(2400 + 1.05t > 4000\\)",
+    "\\(2400(1.5)^{t} > 4000\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "5% growth means multiplying by \\(1 + 0.05 = 1.05\\) each year, so the population after \\(t\\) years is \\(2400(1.05)^t\\).",
+   "rationales": [
+    "Correct.",
+    "Used the rate alone as the base; that would shrink the population.",
+    "Linear model; percent growth is exponential.",
+    "5% written as 0.5 instead of 0.05."
+   ],
+   "standard": "A2.A.CED.A.1"
+  },
+  {
+   "id": "LL-A2-009",
+   "category": "EI",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "The volume of a cone is \\(V = \\frac{1}{3}\\pi r^{2}h\\). Which equation gives the radius \\(r\\) in terms of \\(V\\) and \\(h\\), for \\(r > 0\\)?",
+   "choices": [
+    "\\(r = \\sqrt{\\dfrac{V}{3\\pi h}}\\)",
+    "\\(r = \\dfrac{3V}{\\pi h}\\)",
+    "\\(r = \\sqrt{\\dfrac{3V}{\\pi h}}\\)",
+    "\\(r = \\dfrac{\\sqrt{3V}}{\\pi h}\\)"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": "Multiply by 3: \\(3V = \\pi r^2 h\\). Divide by \\(\\pi h\\): \\(r^2 = \\frac{3V}{\\pi h}\\). Take the positive square root.",
+   "rationales": [
+    "Divided by 3 instead of multiplying by 3.",
+    "Solved for \\(r^2\\), not \\(r\\).",
+    "Correct.",
+    "Took the square root of the numerator only."
+   ],
+   "standard": "A2.A.CED.A.3"
+  },
+  {
+   "id": "LL-A2-007",
+   "category": "EI",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "What is the solution set of \\(\\sqrt{x + 7} = x - 5\\)?",
+   "choices": [
+    "\\(\\{2, 9\\}\\)",
+    "\\(\\{9\\}\\)",
+    "\\(\\{2\\}\\)",
+    "no solution"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Square both sides: \\(x + 7 = x^2 - 10x + 25\\), so \\(x^2 - 11x + 18 = 0\\) and \\(x = 2\\) or \\(x = 9\\). Check: \\(x = 9\\) gives \\(4 = 4\\). \\(x = 2\\) gives \\(3 = -3\\), which is false, so 2 is extraneous.",
+   "rationales": [
+    "Did not check for extraneous solutions; \\(x = 2\\) fails.",
+    "Correct.",
+    "Kept the extraneous solution and dropped the real one.",
+    "\\(x = 9\\) does work: \\(\\sqrt{16} = 4\\)."
+   ],
+   "standard": "A2.A.REI.A.2"
+  },
+  {
+   "id": "LL-A2-028",
+   "category": "EI",
+   "standard": "A2.A.REI.B.3",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "A school sold 120 tickets to a play and collected $810. Adult tickets cost $8 and student tickets cost $5. How many student tickets were sold?",
+   "choices": [
+    "40",
+    "50",
+    "70",
+    "90"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Let \\(a\\) = adult and \\(s\\) = student tickets. \\(a + s = 120\\) and \\(8a + 5s = 810\\). Substituting \\(a = 120 - s\\): \\(960 - 3s = 810\\), so \\(s = 50\\).",
+   "rationales": [
+    "Arithmetic error in solving the system.",
+    "Correct.",
+    "That is the number of adult tickets.",
+    "Switched the two ticket prices."
+   ]
+  },
+  {
+   "id": "LL-A2-027",
+   "category": "EI",
+   "standard": "A2.A.REI.B.4",
+   "type": "MS",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Which ordered pairs are solutions to this system? Select the <b>two</b> correct answers.<p>\\(y = x^{2} - 4x + 1\\)<br>\\(y = 2x - 4\\)</p>",
+   "choices": [
+    "\\((1, -2)\\)",
+    "\\((-1, -6)\\)",
+    "\\((5, 6)\\)",
+    "\\((-5, -14)\\)",
+    "\\((2, 0)\\)"
+   ],
+   "answer": [
+    0,
+    2
+   ],
+   "explanation": "Set the equations equal: \\(x^2 - 4x + 1 = 2x - 4\\), so \\(x^2 - 6x + 5 = 0\\) and \\((x - 1)(x - 5) = 0\\). Then \\(y = 2(1) - 4 = -2\\) and \\(y = 2(5) - 4 = 6\\).",
+   "rationales": [
+    "Correct.",
+    "Sign error when factoring; \\(x = -1\\) does not satisfy the quadratic.",
+    "Correct.",
+    "Sign error when factoring.",
+    "Lies on the line but not on the parabola."
+   ]
+  },
+  {
+   "id": "LL-A2-030",
+   "category": "FN",
+   "standard": "A2.F.BF.A.1.b",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "An online store takes 20% off the price of an item, \\(g(x) = 0.8x\\), and then adds a $5 shipping fee, \\(f(x) = x + 5\\). Which function gives the final cost of an item with original price \\(x\\)?",
+   "choices": [
+    "\\(f(g(x)) = 0.8x + 5\\)",
+    "\\(g(f(x)) = 0.8x + 5\\)",
+    "\\(f(g(x)) = 0.8(x + 5)\\)",
+    "\\(f(g(x)) = 0.2x + 5\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "The discount happens first, so apply \\(g\\) first, then \\(f\\): \\(f(g(x)) = 0.8x + 5\\).",
+   "rationales": [
+    "Correct.",
+    "Composition order is wrong, and \\(g(f(x)) = 0.8x + 4\\).",
+    "That discounts the shipping fee too, which is \\(g(f(x))\\).",
+    "Used the discount amount (20%) instead of the price paid (80%)."
+   ]
+  },
+  {
+   "id": "LL-A2-015",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "The first three terms of a geometric sequence are 3, 12, 48, ... What is the 6th term?",
+   "choices": [
+    "768",
+    "3,072",
+    "12,288",
+    "92"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "\\(a_n = 3(4)^{n - 1}\\), so \\(a_6 = 3(4)^5 = 3 \\cdot 1024 = 3072\\).",
+   "rationales": [
+    "That is the 5th term.",
+    "Correct.",
+    "Used \\(4^n\\) instead of \\(4^{n-1}\\); that is the 7th term.",
+    "Treated the sequence as arithmetic."
+   ],
+   "standard": "A2.F.BF.A.2"
+  },
+  {
+   "id": "LL-A2-012",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "The graph of \\(g(x)\\) is the graph of \\(f(x) = \\sqrt{x}\\) after these transformations:<ul><li>a reflection over the \\(x\\)-axis</li><li>a horizontal translation 2 units to the left</li><li>a vertical translation 5 units down</li></ul>Which equation represents \\(g(x)\\)?",
+   "choices": [
+    "\\(g(x) = -\\sqrt{x + 2} - 5\\)",
+    "\\(g(x) = -\\sqrt{x - 2} - 5\\)",
+    "\\(g(x) = \\sqrt{-x + 2} - 5\\)",
+    "\\(g(x) = -\\sqrt{x - 5} + 2\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "Reflect over the \\(x\\)-axis: \\(-\\sqrt{x}\\). Left 2: replace \\(x\\) with \\(x + 2\\). Down 5: subtract 5.",
+   "rationales": [
+    "Correct.",
+    "\\(x - 2\\) shifts right, not left.",
+    "A negative inside the root reflects over the \\(y\\)-axis, not the \\(x\\)-axis.",
+    "Horizontal and vertical shifts are swapped."
+   ],
+   "standard": "A2.F.BF.B.3"
+  },
+  {
+   "id": "LL-A2-013",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Given \\(f(x) = 2x^{3} + 1\\), what is \\(f^{-1}(x)\\)?",
+   "choices": [
+    "\\(f^{-1}(x) = \\sqrt[3]{\\dfrac{x}{2}} - 1\\)",
+    "\\(f^{-1}(x) = \\left(\\dfrac{x - 1}{2}\\right)^{3}\\)",
+    "\\(f^{-1}(x) = \\dfrac{\\sqrt[3]{x - 1}}{2}\\)",
+    "\\(f^{-1}(x) = \\sqrt[3]{\\dfrac{x - 1}{2}}\\)"
+   ],
+   "answer": [
+    3
+   ],
+   "explanation": "Swap and solve: \\(x = 2y^3 + 1\\), so \\(y^3 = \\frac{x - 1}{2}\\) and \\(y = \\sqrt[3]{\\frac{x - 1}{2}}\\).",
+   "rationales": [
+    "Undid the steps in the wrong order.",
+    "Cubed instead of taking the cube root.",
+    "Divided by 2 after the cube root instead of before.",
+    "Correct."
+   ],
+   "standard": "A2.F.BF.B.4.b"
+  },
+  {
+   "id": "LL-A2-011",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "The function \\(f(x) = 3(2)^{x}\\) models the number of bacteria, in thousands, after \\(x\\) hours. What is the average rate of change of \\(f\\) from \\(x = 1\\) to \\(x = 4\\)?",
+   "choices": [
+    "8 thousand bacteria per hour",
+    "14 thousand bacteria per hour",
+    "16 thousand bacteria per hour",
+    "42 thousand bacteria per hour"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "\\(f(1) = 6\\) and \\(f(4) = 48\\). Average rate \\(= \\frac{48 - 6}{4 - 1} = \\frac{42}{3} = 14\\).",
+   "rationales": [
+    "That is the growth factor \\(f(4) \\div f(1)\\), not a rate of change.",
+    "Correct.",
+    "Divided \\(f(4)\\) by 3 without subtracting \\(f(1)\\).",
+    "Found the total change but did not divide by the change in \\(x\\)."
+   ],
+   "standard": "A2.F.IF.A.2"
+  },
+  {
+   "id": "LL-A2-016",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "What is the domain of \\(k(x) = \\sqrt{3x + 12}\\)?",
+   "choices": [
+    "\\((-\\infty, -4]\\)",
+    "\\([-4, \\infty)\\)",
+    "\\([4, \\infty)\\)",
+    "\\([-12, \\infty)\\)"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "The radicand must be at least 0: \\(3x + 12 \\ge 0\\), so \\(x \\ge -4\\).",
+   "rationales": [
+    "Inequality direction reversed.",
+    "Correct.",
+    "Sign error when solving.",
+    "Did not divide by 3."
+   ],
+   "standard": "A2.F.IF.B.4"
+  },
+  {
+   "id": "LL-A2-029",
+   "category": "FN",
+   "standard": "A2.F.IF.B.5.b",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "N",
+   "stem": "The number of bacteria in a sample after \\(t\\) hours is \\(B(t) = 5(2)^{t+3}\\). Which equivalent form shows the initial number of bacteria?",
+   "choices": [
+    "\\(B(t) = 10(2)^{t}\\)",
+    "\\(B(t) = 40(2)^{t}\\)",
+    "\\(B(t) = 5(2)^{t} + 8\\)",
+    "\\(B(t) = 15(2)^{t}\\)"
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "\\(5(2)^{t+3} = 5(2^3)(2^t) = 40(2)^t\\), so the initial amount is 40 bacteria.",
+   "rationales": [
+    "Multiplied 5 by 2 instead of by \\(2^3\\).",
+    "Correct.",
+    "Turned the product \\(2^3 \\cdot 2^t\\) into a sum.",
+    "Multiplied 5 by 3 instead of by \\(2^3\\)."
+   ]
+  },
+  {
+   "id": "LL-A2-014",
+   "category": "FN",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Which expression gives the solution to \\(5e^{2t} = 40\\)?",
+   "choices": [
+    "\\(t = \\dfrac{\\ln 8}{2}\\)",
+    "\\(t = 2\\ln 8\\)",
+    "\\(t = \\dfrac{\\ln 35}{2}\\)",
+    "\\(t = \\dfrac{\\ln 40}{10}\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "Divide by 5: \\(e^{2t} = 8\\). Take the natural log: \\(2t = \\ln 8\\), so \\(t = \\frac{\\ln 8}{2}\\).",
+   "rationales": [
+    "Correct.",
+    "Multiplied by 2 instead of dividing.",
+    "Subtracted 5 instead of dividing by 5.",
+    "Treated \\(5e^{2t}\\) as \\(e^{10t}\\)."
+   ],
+   "standard": "A2.F.LE.A.1.a"
+  },
+  {
+   "id": "LL-A2-021",
+   "category": "SP",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Events \\(A\\) and \\(B\\) have \\(P(A) = 0.4\\), \\(P(B) = 0.5\\), and \\(P(A \\text{ and } B) = 0.2\\). Which statement is true?",
+   "choices": [
+    "\\(A\\) and \\(B\\) are independent because \\(P(A)P(B) = P(A \\text{ and } B)\\).",
+    "\\(A\\) and \\(B\\) are independent because \\(P(A) + P(B) < 1\\).",
+    "\\(A\\) and \\(B\\) are not independent because \\(P(A) \\neq P(B)\\).",
+    "\\(A\\) and \\(B\\) are not independent because \\(P(A \\text{ and } B) \\neq 0\\)."
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "\\(0.4 \\times 0.5 = 0.2 = P(A \\text{ and } B)\\), which is the test for independence.",
+   "rationales": [
+    "Correct.",
+    "The sum of probabilities does not test independence.",
+    "Independent events can have different probabilities.",
+    "That describes mutually exclusive events, not independence."
+   ],
+   "standard": "A2.S.CP.A.1"
+  },
+  {
+   "id": "LL-A2-032",
+   "category": "SP",
+   "standard": "A2.S.CP.B.2.b",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "A club has 6 boys and 4 girls. Three members are chosen at random to plan an event. What is the probability that all three are girls?",
+   "choices": [
+    "\\(\\frac{1}{30}\\)",
+    "\\(\\frac{2}{5}\\)",
+    "\\(\\frac{1}{5}\\)",
+    "\\(\\frac{4}{30}\\)"
+   ],
+   "answer": [
+    0
+   ],
+   "explanation": "Ways to choose 3 girls: \\({}_4C_3 = 4\\). Ways to choose any 3 members: \\({}_{10}C_3 = 120\\). Probability \\(= \\frac{4}{120} = \\frac{1}{30}\\).",
+   "rationales": [
+    "Correct.",
+    "That is the probability that one chosen member is a girl.",
+    "Treated the draws as if they were done with replacement and added.",
+    "Used 4 favorable outcomes but counted only 30 total outcomes."
+   ]
+  },
+  {
+   "id": "LL-A2-033",
+   "category": "SP",
+   "standard": "A2.S.CP.B.3",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Luis flips a coin 10 times and gets 7 heads. He claims the coin is unfair. Which statement best evaluates his claim?",
+   "choices": [
+    "The claim is correct because 7 out of 10 is not 50%.",
+    "The claim is correct because the next flip will probably be tails.",
+    "There is not enough evidence; with many more flips, a fair coin's proportion of heads should get close to 0.5.",
+    "The claim is incorrect because coins are always fair."
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": "By the Law of Large Numbers, results from a small number of trials can vary a lot. A fair coin's proportion of heads approaches 0.5 only over many trials.",
+   "rationales": [
+    "10 flips is too small a sample to judge.",
+    "Each flip is independent; past results do not change the next flip.",
+    "Correct.",
+    "Some coins can be unfair; the claim needs more data, not a blanket rule."
+   ]
+  },
+  {
+   "id": "LL-A2-018",
+   "category": "SP",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "At a high school, 70% of students are in a club, and 28% of students are in a club and play a sport. What percent of the students in a club also play a sport?",
+   "choices": [
+    "19.6%",
+    "28%",
+    "40%",
+    "42%"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": "\\(P(\\text{sport} \\mid \\text{club}) = \\frac{P(\\text{sport and club})}{P(\\text{club})} = \\frac{0.28}{0.70} = 0.40\\).",
+   "rationales": [
+    "Multiplied instead of dividing.",
+    "That is the \"and\" probability, not the conditional one.",
+    "Correct.",
+    "Subtracted instead of dividing."
+   ],
+   "standard": "A2.S.CP.C.4"
+  },
+  {
+   "id": "LL-A2-034",
+   "category": "SP",
+   "standard": "A2.S.IC.A.2",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "A city wants to know whether residents support building a new gym. A researcher surveys 200 people as they leave a fitness center. What is the main source of bias in this study?",
+   "choices": [
+    "The sample size is too large.",
+    "The people surveyed are not representative of all residents.",
+    "The question is about a new gym.",
+    "The researcher used a survey instead of an experiment."
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "People leaving a fitness center are more likely to favor a gym than residents in general, so the sample is not representative (sampling bias).",
+   "rationales": [
+    "A larger sample does not cause bias.",
+    "Correct.",
+    "The topic itself is not a source of bias.",
+    "A survey is the right method for measuring opinions."
+   ]
+  },
+  {
+   "id": "LL-A2-019",
+   "category": "SP",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Test scores are normally distributed with a mean of 72 and a standard deviation of 6. About what percent of scores are between 66 and 84?",
+   "choices": [
+    "47.5%",
+    "68%",
+    "81.5%",
+    "95%"
+   ],
+   "answer": [
+    2
+   ],
+   "explanation": "66 is 1 standard deviation below the mean and 84 is 2 above. By the Empirical Rule: \\(34\\% + 34\\% + 13.5\\% = 81.5\\%\\).",
+   "rationales": [
+    "That is only the mean to 2 standard deviations above.",
+    "That is within 1 standard deviation on both sides.",
+    "Correct.",
+    "That is within 2 standard deviations on both sides."
+   ],
+   "standard": "A2.S.ID.A.2"
+  },
+  {
+   "id": "LL-A2-031",
+   "category": "SP",
+   "standard": "A2.S.ID.A.3",
+   "type": "MC",
+   "dok": 2,
+   "calculator": "Y",
+   "stem": "Maya scored 82 on a test with a mean of 70 and a standard deviation of 8. Jordan scored 88 on a different test with a mean of 80 and a standard deviation of 4. Who did better compared with others who took the same test?",
+   "choices": [
+    "Maya, because her z-score is 2.0 and Jordan's is 1.5.",
+    "Jordan, because his z-score is 2.0 and Maya's is 1.5.",
+    "Jordan, because 88 is higher than 82.",
+    "They did equally well, because both scored above the mean."
+   ],
+   "answer": [
+    1
+   ],
+   "explanation": "Maya: \\(z = \\frac{82 - 70}{8} = 1.5\\). Jordan: \\(z = \\frac{88 - 80}{4} = 2.0\\). Jordan is farther above his test's mean.",
+   "rationales": [
+    "The z-scores are switched.",
+    "Correct.",
+    "Raw scores from different tests cannot be compared directly.",
+    "Being above the mean does not tell how far above."
+   ]
+  }
+ ],
+ "standards": "2023-24 Tennessee Academic Standards for Mathematics, Algebra II"
+}
